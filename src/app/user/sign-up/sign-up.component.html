@@ -1,0 +1,29 @@
+
+  <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+    <div class="row">
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" placeholder="User Name" required>
+      </div>
+      <div class="input-field col s6">
+        <input class="validate" type="Password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" placeholder="Password" required >
+         </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.Email" placeholder="Email" >
+        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName" placeholder="First Name">
+       </div>
+      <div class="input-field col s6">
+        <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName" placeholder="Last Name">
+       </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+        </div>
+      </div>
+  </form>

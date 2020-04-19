@@ -1,0 +1,37 @@
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<form #form = "ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <!-- <input type="hidden" name="quoteid" #quoteid="ngModel" [(ngModel)]="service.formData.quoteid"> -->
+    <div class="form-group">
+        <label>Quote Type</label>
+        <input  name="quotetype" #quotetype="ngModel" [(ngModel)]="service.formData.quotetype" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Contact</label>
+        <input name="Contact" #Contact="ngModel" [(ngModel)]="service.formData.Contact" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Due Date</label>
+        <input type="datetime-local"  name="duedate" #duedate="ngModel" [(ngModel)]="service.formData. duedate" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Task Type</label>
+        <input name="tasktype" #tasktype="ngModel" [(ngModel)]="service.formData.tasktype" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <button [disabled] = "form.invalid" type="submit" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+</form>
+</body>
